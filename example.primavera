@@ -1,0 +1,23 @@
+package br.imd.ufrn;
+
+import java.util.List;
+
+server = "172.0.0.1";
+
+class ApiService {
+    class User {
+        type String name;
+        type String email;
+    }
+
+    class Response {
+        type int status;
+        type String message;
+    }
+
+    method User getUser(String id, fields name) GET route = "/users/{userId}";
+    query param = (fields=name)
+    path param = (id=userId)
+
+    method Response updateUser(String id, String name) POST route = "/users/{id}";
+}
